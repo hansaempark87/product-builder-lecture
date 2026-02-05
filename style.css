@@ -1,45 +1,73 @@
 body {
-    font-family: sans-serif;
-    transition: background-color 0.3s, color 0.3s;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+  text-align: center;
 }
 
-.lotto-numbers {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+#lotto-numbers {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .lotto-number {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    margin: 0 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  font-size: 18px;
 }
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-mode .container {
-    border-color: #555;
+.dark-mode {
+  background-color: #333;
+  color: white;
 }
 
 .dark-mode .lotto-number {
-    background-color: #555;
+  background-color: #555;
+  color: white;
+}
+
+.form-container {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form-container h2 {
+  margin-bottom: 15px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
