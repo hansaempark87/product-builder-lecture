@@ -1,9 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lotto Number Generator</title>
+  <title>무료 로또 번호 생성기 | 행운의 당첨 번호 조합 받기</title>
+  <meta name="description" content="오늘의 행운을 시험해보세요! 저희 무료 로또 번호 생성기는 통계적 분석과 재미있는 알고리즘을 결합하여 당신만의 특별한 로또 당첨 예상 번호를 조합해 드립니다. 지금 바로 행운의 번호를 받아보세요!">
+  <meta name="keywords" content="로또, 로또 번호, 로또 번호 생성기, 로또 당첨 번호, 행운 번호, 로또 조합, 무료 로또, 로또 예측, 로또 자동, 로또 수동">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://product-builder-lecture-r2y.pages.dev/">
+  <meta property="og:title" content="무료 로또 번호 생성기 | 행운의 당첨 번호 조합 받기">
+  <meta property="og:description" content="버튼 클릭 한 번으로 당신의 행운을 시험해보세요! 통계와 재미를 더한 저희 로또 번호 생성기가 당신의 특별한 당첨 예상 번호를 알려드립니다.">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://product-builder-lecture-r2y.pages.dev/">
+  <meta property="twitter:title" content="무료 로또 번호 생성기 | 행운의 당첨 번호 조합 받기">
+  <meta property="twitter:description" content="버튼 클릭 한 번으로 당신의 행운을 시험해보세요! 통계와 재미를 더한 저희 로또 번호 생성기가 당신의 특별한 당첨 예상 번호를 알려드립니다.">
+  
+  <link rel="canonical" href="https://product-builder-lecture-r2y.pages.dev/">
   <link href='/style.css' rel='stylesheet'>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5233299197407834"
      crossorigin="anonymous"></script>
@@ -27,74 +43,65 @@
 </head>
 <body>
     <header>
-        <h1>Lotto Number Generator</h1>
+        <h1>무료 로또 번호 생성기</h1>
     </header>
   <div class="container">
     <section id="generator">
-        <h2>Your Lucky Numbers for Today!</h2>
-        <p>Click the button below to generate your personal set of lucky lotto numbers.</p>
+        <h2>오늘의 행운 번호!</h2>
+        <p>아래 버튼을 클릭하여 당신만의 행운의 로또 번호를 받아보세요.</p>
         <div id="lotto-numbers"></div>
         <div style="text-align: center;">
-            <button id="generate-button">Generate New Numbers</button>
-            <button id="mode-toggle">Toggle Dark/White Mode</button>
+            <button id="generate-button">새 번호 생성</button>
+            <button id="mode-toggle">다크/라이트 모드 전환</button>
         </div>
     </section>
 
     <section id="stats">
-        <h2>Simple Statistics of Your Numbers</h2>
-        <p>Here is a simple statistical breakdown of the generated numbers:</p>
+        <h2>생성된 번호 통계</h2>
+        <p>생성된 번호에 대한 간단한 통계입니다:</p>
         <ul>
-            <li><strong>Sum of Numbers:</strong> <span id="sum-of-numbers">-</span></li>
-            <li><strong>Odd/Even Ratio:</strong> <span id="odd-even-ratio">-</span></li>
+            <li><strong>번호의 합:</strong> <span id="sum-of-numbers">-</span></li>
+            <li><strong>홀/짝 비율:</strong> <span id="odd-even-ratio">-</span></li>
         </ul>
     </section>
 
     <section id="fun-facts">
-        <h2>Did You Know?</h2>
-        <p>Here are some fun facts about lotteries:</p>
+        <h2>알고 계셨나요?</h2>
+        <p>로또에 대한 몇 가지 재미있는 사실들:</p>
         <ul>
-            <li>The first recorded lotteries to offer tickets for sale with prizes in the form of money were held in the Low Countries in the 15th century.</li>
-            <li>The word "lottery" is derived from the Dutch noun "lot," meaning "fate."</li>
-            <li>Statistically, you're more likely to get struck by lightning than to win the lottery jackpot. But it's all about the dream, right?</li>
+            <li>금전적 상금이 있는 복권을 판매한 최초의 기록은 15세기 네덜란드에서 찾아볼 수 있습니다.</li>
+            <li>"복권(lottery)"이라는 단어는 "운명"을 의미하는 네덜란드어 명사 "lot"에서 파생되었습니다.</li>
+            <li>통계적으로 로또 1등에 당첨될 확률보다 벼락에 맞을 확률이 더 높다고 합니다. 하지만 중요한 건 꿈을 꾸는 것이겠죠?</li>
         </ul>
     </section>
 
     <div class="form-container">
-      <h2>Partnership Inquiry</h2>
+      <h2>파트너십 문의</h2>
       <form action="https://formspree.io/f/xaqdwbba" method="POST">
-        <label for="email">Your Email</label>
+        <label for="email">이메일</label>
         <input type="email" id="email" name="email">
-        <label for="message">Your Message</label>
+        <label for="message">메시지</label>
         <textarea id="message" name="message" rows="4"></textarea>
-        <button type="submit">Send</button>
+        <button type="submit">보내기</button>
       </form>
     </div>
 
     <div id="disqus_thread"></div>
     <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function() { // DON'T EDIT BELOW THIS LINE
+        (function() { 
         var d = document, s = d.createElement('script');
         s.src = 'https://productbuilder-vt38olld0o.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
         })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript>댓글을 보려면 JavaScript를 활성화하세요. <a href="https://disqus.com/?ref_noscript">Disqus에서 제공하는 댓글입니다.</a></noscript>
   </div>
   <footer>
-    <a href="/about.html">About</a>
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/strategies.html">Lotto Tips</a>
-    <a href="/history.html">Winning History</a>
+    <a href="/소개.html">소개</a>
+    <a href="/개인정보처리방침.html">개인정보처리방침</a>
+    <a href="/로또전략.html">로또 전략</a>
+    <a href="/과거당첨내역.html">과거 당첨 내역</a>
     <div class="social-media">
         <a href="#">Facebook</a>
         <a href="#">Twitter</a>
