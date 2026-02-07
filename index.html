@@ -26,12 +26,38 @@
 </script>
 </head>
 <body>
+    <header>
+        <h1>Lotto Number Generator</h1>
+    </header>
   <div class="container">
-    <h1>Lotto Number Generator</h1>
-    <p>Your lucky numbers for today!</p>
-    <div id="lotto-numbers"></div>
-    <button id="generate-button">Generate New Numbers</button>
-    <button id="mode-toggle">Toggle Dark/White Mode</button>
+    <section id="generator">
+        <h2>Your Lucky Numbers for Today!</h2>
+        <p>Click the button below to generate your personal set of lucky lotto numbers.</p>
+        <div id="lotto-numbers"></div>
+        <div style="text-align: center;">
+            <button id="generate-button">Generate New Numbers</button>
+            <button id="mode-toggle">Toggle Dark/White Mode</button>
+        </div>
+    </section>
+
+    <section id="stats">
+        <h2>Simple Statistics of Your Numbers</h2>
+        <p>Here is a simple statistical breakdown of the generated numbers:</p>
+        <ul>
+            <li><strong>Sum of Numbers:</strong> <span id="sum-of-numbers">-</span></li>
+            <li><strong>Odd/Even Ratio:</strong> <span id="odd-even-ratio">-</span></li>
+        </ul>
+    </section>
+
+    <section id="fun-facts">
+        <h2>Did You Know?</h2>
+        <p>Here are some fun facts about lotteries:</p>
+        <ul>
+            <li>The first recorded lotteries to offer tickets for sale with prizes in the form of money were held in the Low Countries in the 15th century.</li>
+            <li>The word "lottery" is derived from the Dutch noun "lot," meaning "fate."</li>
+            <li>Statistically, you're more likely to get struck by lightning than to win the lottery jackpot. But it's all about the dream, right?</li>
+        </ul>
+    </section>
 
     <div class="form-container">
       <h2>Partnership Inquiry</h2>
@@ -69,6 +95,11 @@
     <a href="/privacy.html">Privacy Policy</a>
     <a href="/strategies.html">Lotto Tips</a>
     <a href="/history.html">Winning History</a>
+    <div class="social-media">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+    </div>
   </footer>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>

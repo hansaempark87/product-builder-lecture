@@ -1,49 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const generateBtn = document.getElementById('generate-button');
-    const themeToggleBtn = document.getElementById('mode-toggle');
-    const lottoNumbersContainer = document.getElementById('lotto-numbers');
-    const body = document.body;
+document.addEventListener('DOMContentLoaded', function() {
+  const lottoNumbersContainer = document.getElementById('lotto-numbers');
+  const generateButton = document.getElementById('generate-button');
+  const modeToggleButton = document.getElementById('mode-toggle');
+  const sumOfNumbersEl = document.getElementById('sum-of-numbers');
+  const oddEvenRatioEl = document.getElementById('odd-even-ratio');
 
-    function generateLottoNumbers() {
-        const numbers = new Set();
-        while (numbers.size < 7) { // Generate 7 unique numbers for bonus
-            numbers.add(Math.floor(Math.random() * 45) + 1);
-        }
-        return Array.from(numbers).sort((a, b) => a - b);
-    }
+  function generateLottoNumbers() {
+      lottoNumbersContainer.innerHTML = '';
+      const numbers = new Set();
+      while(numbers.size < 6) {
+          numbers.add(Math.floor(Math.random() * 45) + 1);
+      }
+      const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+      
+      sortedNumbers.forEach(number => {
+          const numberElement = document.createElement('div');
+          numberElement.className = 'lotto-number';
+          numberElement.textContent = number;
+          lottoNumbersContainer.appendChild(numberElement);
+      });
 
-    function displayLottoNumbers(numbers) {
-        lottoNumbersContainer.innerHTML = '';
-        const winningNumbers = numbers.slice(0, 6);
-        const bonusNumber = numbers[6];
+      // Calculate and display stats
+      const sum = sortedNumbers.reduce((acc, num) => acc + num, 0);
+      const oddCount = sortedNumbers.filter(num => num % 2 !== 0).length;
+      const evenCount = 6 - oddCount;
+      sumOfNumbersEl.textContent = sum;
+      oddEvenRatioEl.textContent = `${oddCount} Odd / ${evenCount} Even`;
+  }
 
-        for (const number of winningNumbers) {
-            const numberDiv = document.createElement('div');
-            numberDiv.classList.add('lotto-number');
-            numberDiv.textContent = number;
-            lottoNumbersContainer.appendChild(numberDiv);
-        }
+  generateButton.addEventListener('click', generateLottoNumbers);
 
-        const plusSpan = document.createElement('span');
-        plusSpan.textContent = ' + ';
-        lottoNumbersContainer.appendChild(plusSpan);
+  modeToggleButton.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+  });
 
-        const bonusDiv = document.createElement('div');
-        bonusDiv.classList.add('lotto-number', 'bonus-number');
-        bonusDiv.textContent = bonusNumber;
-        lottoNumbersContainer.appendChild(bonusDiv);
-    }
-
-    generateBtn.addEventListener('click', () => {
-        const numbers = generateLottoNumbers();
-        displayLottoNumbers(numbers);
-    });
-
-    themeToggleBtn.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-    });
-
-    // Initial generation
-    const initialNumbers = generateLottoNumbers();
-    displayLottoNumbers(initialNumbers);
+  // Initial generation
+  generateLottoNumbers();
 });

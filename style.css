@@ -1,19 +1,46 @@
 /* General Body Styles */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
+  font-family: 'Nunito', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
   line-height: 1.6;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   transition: background-color 0.3s, color 0.3s;
 }
 
 /* Dark Mode */
 body.dark-mode {
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: #1a1a1a;
+  color: #f8f9fa;
 }
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 30px;
+}
+
+body.dark-mode header {
+    background-color: #2c2c2c;
+    border-bottom-color: #444;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #007bff;
+}
+
+body.dark-mode header h1 {
+    color: #58a6ff;
+}
+
 
 /* Container */
 .container {
@@ -22,22 +49,22 @@ body.dark-mode {
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 body.dark-mode .container {
-  background-color: #34495e;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Headings */
 h1, h2 {
-  color: #2c3e50;
+  color: #343a40;
   margin-bottom: 20px;
 }
 
 body.dark-mode h1, body.dark-mode h2 {
-  color: #ecf0f1;
+  color: #e9ecef;
 }
 
 /* Lotto Numbers */
@@ -46,63 +73,73 @@ body.dark-mode h1, body.dark-mode h2 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 30px 0;
+  margin: 40px 0;
 }
 
 .lotto-number {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background-color: #3498db;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
-  font-size: 20px;
+  margin: 10px;
+  font-size: 24px;
   font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  transition: transform 0.2s;
+}
+
+.lotto-number:hover {
+    transform: scale(1.1);
 }
 
 body.dark-mode .lotto-number {
-  background-color: #2980b9;
+  background: linear-gradient(45deg, #58a6ff, #007bff);
 }
 
 /* Buttons */
 button {
-  background-color: #3498db;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
+  padding: 15px 25px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
-  margin: 5px;
-  transition: background-color 0.2s;
+  font-weight: bold;
+  margin: 10px 5px;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 #mode-toggle {
-  background-color: #95a5a6;
+  background-color: #6c757d;
 }
 
 #mode-toggle:hover {
-  background-color: #7f8c8d;
+  background-color: #5a6268;
 }
 
 /* Form Container */
 .form-container {
   margin-top: 40px;
-  padding: 20px;
-  border: 1px solid #ddd;
+  padding: 25px;
+  border: 1px solid #dee2e6;
   border-radius: 8px;
+  background-color: #f8f9fa;
 }
 
 body.dark-mode .form-container {
-  border-color: #7f8c8d;
+  border-color: #444;
+  background-color: #333;
 }
 
 .form-container label {
@@ -114,38 +151,76 @@ body.dark-mode .form-container {
 .form-container input,
 .form-container textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: 1px solid #ced4da;
   border-radius: 5px;
-  box-sizing: border-box; /* Important */
+  box-sizing: border-box;
   margin-bottom: 15px;
 }
 
 body.dark-mode .form-container input,
 body.dark-mode .form-container textarea {
-  background-color: #555;
+  background-color: #444;
   color: white;
-  border-color: #777;
+  border-color: #666;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  padding: 30px 20px;
+  border-top: 1px solid #dee2e6;
+  background-color: #fff;
 }
 
 body.dark-mode footer {
-  border-top-color: #7f8c8d;
+  border-top-color: #444;
+  background-color: #2c2c2c;
 }
 
 footer a {
-  color: #3498db;
+  color: #007bff;
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 15px;
+  transition: color 0.2s;
 }
 
 footer a:hover {
+  color: #0056b3;
   text-decoration: underline;
+}
+
+/* Table styles for history.html */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+body.dark-mode th, body.dark-mode td {
+    border-bottom: 1px solid #444;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+body.dark-mode thead th {
+    background-color: #333;
+}
+
+tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+body.dark-mode tbody tr:hover {
+    background-color: #444;
 }
