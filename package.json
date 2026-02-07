@@ -1,0 +1,17 @@
+{
+  "name": "week1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "homepage": "https://hansaempark87.github.io/product-builder-lecture",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
